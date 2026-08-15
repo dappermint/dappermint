@@ -23,12 +23,12 @@ OUT = Path(__file__).resolve().parent.parent / "assets"
 
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
-PINK = (245, 169, 184)
-BLUE = (91, 206, 250)
 LIME = (0, 255, 128)
 CYAN = (0, 255, 255)
 MAGENTA = (255, 0, 220)
 YELLOW = (255, 220, 0)
+ORANGE = (255, 140, 0)
+VIOLET = (150, 120, 255)
 
 
 def canvas(w, h, bg):
@@ -122,7 +122,7 @@ def banner(text, name):
             font.draw(px, text[i], 20 + i * font.ADVANCE * scale, 13, rgb, scale)
         for x in range(w):
             wave = int(2 + 2 * math.sin((x / 9.0) + f * 0.65))
-            px[x, wave] = px[x, h - 1 - wave] = BLUE if f % 2 else PINK
+            px[x, wave] = px[x, h - 1 - wave] = CYAN if f % 2 else MAGENTA
         sparkle(px, w, h, 3, f, WHITE, count=18)
         frames.append(img)
     save_gif(frames, name, 110)
@@ -196,7 +196,7 @@ def marquee(text, name, seconds=18):
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}"
      viewBox="0 0 {w} {h}" role="img" aria-label="{text}">
   <rect width="{w}" height="{h}" fill="#000"/>
-  <g fill="#5bcefa" shape-rendering="crispEdges">
+  <g fill="#00ffff" shape-rendering="crispEdges">
     <animateTransform attributeName="transform" type="translate"
       values="{w},0; {-span},0" dur="{seconds}s" repeatCount="indefinite"/>
     {"".join(rects)}
@@ -209,21 +209,20 @@ def marquee(text, name, seconds=18):
 
 BLINKIES = [
     ("nix or die", "blinkie-nix.gif", BLACK, LIME, WHITE, LIME, MAGENTA),
-    ("i use fish btw", "blinkie-fish.gif", BLACK, CYAN, WHITE, CYAN, BLUE),
-    ("wine is not an emulator", "blinkie-wine.gif", BLACK, MAGENTA, WHITE, MAGENTA, PINK),
-    ("kubernetes survivor", "blinkie-k8s.gif", BLACK, BLUE, WHITE, BLUE, CYAN),
+    ("i use fish btw", "blinkie-fish.gif", BLACK, CYAN, WHITE, CYAN, VIOLET),
+    ("wine is not an emulator", "blinkie-wine.gif", BLACK, MAGENTA, WHITE, MAGENTA, ORANGE),
+    ("kubernetes survivor", "blinkie-k8s.gif", BLACK, VIOLET, WHITE, VIOLET, CYAN),
     ("terminal dweller", "blinkie-term.gif", BLACK, LIME, YELLOW, LIME, YELLOW),
-    ("trans rights", "blinkie-trans.gif", BLACK, PINK, BLUE, PINK, BLUE),
     ("open to work", "blinkie-work.gif", BLACK, YELLOW, WHITE, YELLOW, MAGENTA),
     ("flipper zero enjoyer", "blinkie-flipper.gif", BLACK, MAGENTA, CYAN, MAGENTA, CYAN),
 ]
 
 BUTTONS = [
-    ("made with", "nix", "btn-nix.gif", "N", BLUE, BLACK, CYAN),
+    ("made with", "nix", "btn-nix.gif", "N", VIOLET, BLACK, CYAN),
     ("powered", "by go", "btn-go.gif", "G", CYAN, BLACK, CYAN),
     ("best in a", "terminal", "btn-term.gif", ">", LIME, BLACK, LIME),
     ("swift on", "macos", "btn-swift.gif", "S", (255, 90, 40), BLACK, YELLOW),
-    ("dappy", ".lgbt", "btn-site.gif", "@", PINK, BLACK, PINK),
+    ("dappy", ".lgbt", "btn-site.gif", "@", ORANGE, BLACK, YELLOW),
     ("flipper", "zero", "btn-flip.gif", "F", MAGENTA, BLACK, MAGENTA),
 ]
 

@@ -5,7 +5,6 @@
 <img src="assets/marquee.svg" alt="welcome to my corner of the internet" width="640">
 
 <img src="assets/blinkie-work.gif" alt="open to work">
-<img src="assets/blinkie-trans.gif" alt="trans rights">
 <img src="assets/blinkie-nix.gif" alt="nix or die">
 <br>
 <img src="assets/blinkie-k8s.gif" alt="kubernetes survivor">
@@ -113,8 +112,8 @@ a flipper zero fap, built against the f6/f7 fbt sdk.
 
 ### `*~*~*` the day job `*~*~*`
 
-kubernetes clusters and the pipelines that feed them. eks, helm, k9s when something is on fire.
-infrastructure in opentofu and ansible, secrets in vault and sops, aws underneath.
+kubernetes clusters and the pipelines that feed them. eks, karpenter, helm, k9s when something
+is on fire. infrastructure in opentofu and ansible, secrets in vault and sops, aws underneath.
 
 the parts i actually care about: making deploys uneventful, making the failure mode legible
 before someone has to guess, and deleting the runbook step that a machine should have been
@@ -127,7 +126,7 @@ evidence of how i think instead.
 
 **languages** &nbsp; go · swift · c · nix · python
 
-**platform** &nbsp; kubernetes · eks · helm · k9s · opentofu · ansible · vault · sops · aws
+**platform** &nbsp; kubernetes · eks · karpenter · helm · k9s · opentofu · ansible · vault · sops · aws
 
 **day to day** &nbsp; macos on nix-darwin · fish · a flipper zero that has ruined several
 evenings
