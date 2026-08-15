@@ -6,6 +6,9 @@
 """Generates every image in assets/. No network, no system fonts.
 
     uv run tools/gen.py
+
+ateez.gif and mamamoo.gif are vendored, not generated here. See assets/CREDITS.md.
+Do not wipe assets/ before running this.
 """
 
 import colorsys
@@ -74,13 +77,13 @@ def sparkle(px, w, h, seed, frame, colour, count=7):
 def blinkie(text, name, bg, ink_a, ink_b, trim_a, trim_b):
     scale = 2
     tw, th = font.measure(text, scale)
-    w, h = tw + 16, th + 12
+    w, h = tw + 16, th + 6
     frames = []
     for f in range(2):
         img, px = canvas(w, h, bg)
         border(px, w, h, trim_a if f == 0 else trim_b, bg)
         sparkle(px, w, h, len(text), f, trim_b if f == 0 else trim_a)
-        font.draw(px, text, 8, 6, ink_a if f == 0 else ink_b, scale)
+        font.draw(px, text, 8, 3, ink_a if f == 0 else ink_b, scale)
         frames.append(img)
     save_gif(frames, name, 420)
 

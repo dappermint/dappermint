@@ -1,0 +1,32 @@
+# asset credits
+
+everything here is self-hosted. nothing is hotlinked.
+
+## generated
+
+every `blinkie-*.gif`, `btn-*.gif`, `banner.gif`, `construction.gif`, `rule.gif` and
+`marquee.svg` is drawn by `tools/gen.py` from the bitmap font in `tools/font.py`.
+no external font, no external image. `uv run tools/gen.py` rebuilds them.
+
+## vendored
+
+`ateez.gif` and `mamamoo.gif` are copied from my own site's blinkie set
+(`personal/sbx/site/public/blinkies`), where they are built by that repo's
+`scripts/make-blinkies.py`. **`tools/gen.py` does not regenerate these two**, so do not
+wipe `assets/` before running it.
+
+`ateez.gif` — the ATEEZ wordmark, orange marching border.
+
+- [File:ATEEZ orange logo.png](https://commons.wikimedia.org/wiki/File:ATEEZ_orange_logo.png), wikimedia commons
+- licence: **PD-textlogo**, below the threshold of originality, so public domain for copyright
+
+`mamamoo.gif` — the MAMAMOO wordmark, white on black.
+
+- [File:MAMAMOO Logo.jpg](https://commons.wikimedia.org/wiki/File:MAMAMOO_Logo.jpg), wikimedia commons
+- licence: **PD-textlogo**, same basis
+
+### trademark note
+
+commons tags the two wordmarks as possible trademarks. PD-textlogo settles the copyright
+question, not the trademark one. these are non-commercial fan badges, with no claim of
+affiliation with or endorsement by ATEEZ, MAMAMOO, KQ Entertainment or RBW.

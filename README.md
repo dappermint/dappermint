@@ -12,6 +12,9 @@
 <br>
 <img src="assets/blinkie-wine.gif" alt="wine is not an emulator">
 <img src="assets/blinkie-term.gif" alt="terminal dweller">
+<br>
+<a href="https://www.youtube.com/watch?v=VBZA_15mGGU" title="ateez music video"><img src="assets/ateez.gif" alt="ateez"></a>
+<a href="https://www.youtube.com/watch?v=KhTeiaCezwM" title="mamamoo music video"><img src="assets/mamamoo.gif" alt="mamamoo"></a>
 
 </div>
 
