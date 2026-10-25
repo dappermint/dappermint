@@ -8,6 +8,7 @@
     uv run tools/gen.py
 
 ateez.gif and mamamoo.gif are vendored, not generated here. See assets/CREDITS.md.
+twice.gif and seventeen.gif are built from the logos in tools/logos/.
 Do not wipe assets/ before running this.
 """
 
@@ -210,14 +211,52 @@ def marquee(text, name, seconds=18):
     print(f"  {name}  {w}x{h}  {len(rects)} rects")
 
 
+LOGOS = Path(__file__).resolve().parent / "logos"
+
+
+def logo_blinkie(mask, text, name, colour, dim):
+    w, h = 150, 20
+    mark = mask.crop(mask.getbbox())
+    mh = 14
+    mark = mark.resize((round(mark.width * mh / mark.height), mh), Image.LANCZOS)
+    mark = mark.point(lambda v: 255 if v > 110 else 0)
+    tw, th = font.measure(text, 1)
+    x = (w - mark.width - 6 - tw) // 2
+    frames = []
+    for f in range(6):
+        img, px = canvas(w, h, BLACK)
+        for i in range(w):
+            lit = ((i + f) // 2) % 2 == 0
+            px[i, 0], px[i, h - 1] = (colour, dim) if lit else (dim, colour)
+        for j in range(h):
+            lit = ((j + f) // 2) % 2 == 0
+            px[0, j], px[w - 1, j] = (colour, dim) if lit else (dim, colour)
+        sparkle(px, w, h, len(name), f, WHITE)
+        img.paste(Image.new("RGB", mark.size, colour), (x, (h - mh) // 2), mark)
+        font.draw(px, text, x + mark.width + 6, (h - th) // 2, WHITE)
+        frames.append(img)
+    save_gif(frames, name, 120)
+
+
+def twice():
+    alpha = Image.open(LOGOS / "twice.png").convert("RGBA").getchannel("A")
+    logo_blinkie(alpha, "twice", "twice.gif", (255, 95, 162), (110, 40, 70))
+
+
+def seventeen():
+    grey = Image.open(LOGOS / "seventeen.jpg").convert("L").point(lambda v: 255 if v > 128 else 0)
+    rows = [y for y in range(grey.height) if grey.crop((0, y, grey.width, y + 1)).getbbox()]
+    gap = next(a for a, b in zip(rows, rows[1:]) if b - a > 8)
+    symbol = grey.crop((0, 0, grey.width, gap + 1))
+    logo_blinkie(symbol, "seventeen", "seventeen.gif", (247, 202, 201), (146, 168, 209))
+
+
 BLINKIES = [
     ("nix or die", "blinkie-nix.gif", BLACK, LIME, WHITE, LIME, MAGENTA),
     ("i use fish btw", "blinkie-fish.gif", BLACK, CYAN, WHITE, CYAN, VIOLET),
     ("wine is not an emulator", "blinkie-wine.gif", BLACK, MAGENTA, WHITE, MAGENTA, ORANGE),
     ("kubernetes survivor", "blinkie-k8s.gif", BLACK, VIOLET, WHITE, VIOLET, CYAN),
     ("terminal dweller", "blinkie-term.gif", BLACK, LIME, YELLOW, LIME, YELLOW),
-    ("open to work", "blinkie-work.gif", BLACK, YELLOW, WHITE, YELLOW, MAGENTA),
-    ("flipper zero enjoyer", "blinkie-flipper.gif", BLACK, MAGENTA, CYAN, MAGENTA, CYAN),
 ]
 
 BUTTONS = [
@@ -226,7 +265,6 @@ BUTTONS = [
     ("best in a", "terminal", "btn-term.gif", ">", LIME, BLACK, LIME),
     ("swift on", "macos", "btn-swift.gif", "S", (255, 90, 40), BLACK, YELLOW),
     ("dappy", ".lgbt", "btn-site.gif", "@", ORANGE, BLACK, YELLOW),
-    ("flipper", "zero", "btn-flip.gif", "F", MAGENTA, BLACK, MAGENTA),
 ]
 
 
@@ -237,13 +275,15 @@ def main():
     print("marquee")
     marquee(
         "welcome to my corner of the internet  *  "
-        "platform engineer  *  go, swift, nix, kubernetes  *  "
-        "open to work  *  sign my guestbook  *  ",
+        "devsecops engineer  *  go, swift, nix, kubernetes  *  "
+        "sign my guestbook  *  ",
         "marquee.svg",
     )
     print("blinkies")
     for text, name, bg, a, b, ta, tb in BLINKIES:
         blinkie(text, name, bg, a, b, ta, tb)
+    twice()
+    seventeen()
     print("buttons")
     for top, bot, name, tag, block, bg, ink in BUTTONS:
         button(top, bot, name, tag, block, bg, ink)
