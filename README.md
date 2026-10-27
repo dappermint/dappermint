@@ -34,7 +34,7 @@ go · swift · c · nix · python &nbsp;·&nbsp; macos on nix-darwin, fish &nbsp
 
 <a href="https://lix.systems/"><img src="assets/built-by-lix.png" alt="built by lix"></a>
 <img src="assets/madewithamac.gif" alt="made with a mac">
-<a href="https://www.gnu.org/"><img src="assets/gnu-linux.gif" alt="made on gnu/linux"></a>
+<img src="assets/best_viewed_with_eyes.gif" alt="best viewed with eyes">
 <a href="https://neovim.io/"><img src="assets/neovim.gif" alt="made with neovim"></a>
 <a href="https://www.torproject.org/"><img src="assets/tor.gif" alt="tor"></a>
 <img src="assets/powered-by-a-mouse-in-a-wheel.gif" alt="powered by a mouse in a wheel">

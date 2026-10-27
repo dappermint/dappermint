@@ -11,7 +11,7 @@ everything here is self-hosted. nothing is hotlinked.
 ## 88x31 buttons
 
 - `built-by-lix.png`: [lix.systems](https://lix.systems/) / [poz.pet/buttons.html](https://poz.pet/buttons.html)
-- `madewithamac.gif`, `gnu-linux.gif`, `neovim.gif`, `tor.gif`, `dark-mode.gif`, `anydamn.gif`: [cyber.dabamos.de/88x31](https://cyber.dabamos.de/88x31/)
+- `madewithamac.gif`, `neovim.gif`, `tor.gif`, `dark-mode.gif`, `anydamn.gif`, `best_viewed_with_eyes.gif`: [cyber.dabamos.de/88x31](https://cyber.dabamos.de/88x31/)
 - `i-like-computer.png`, `powered-by-a-mouse-in-a-wheel.gif`: [poz.pet/buttons.html](https://poz.pet/buttons.html)
 - `mikuapproved.gif`, `cinnamonoll.gif`: [dewside.neocities.org](https://dewside.neocities.org)
 - `kitten88.gif`: [maia.crimew.gay](https://maia.crimew.gay)
