@@ -279,14 +279,8 @@ def main():
         "sign my guestbook  *  ",
         "marquee.svg",
     )
-    print("blinkies")
-    for text, name, bg, a, b, ta, tb in BLINKIES:
-        blinkie(text, name, bg, a, b, ta, tb)
     twice()
     seventeen()
-    print("buttons")
-    for top, bot, name, tag, block, bg, ink in BUTTONS:
-        button(top, bot, name, tag, block, bg, ink)
     print("furniture")
     construction("construction.gif")
     rule("rule.gif")
