@@ -19,16 +19,27 @@
 
 </div>
 
-devsecops engineer: kubernetes on aws (eks, karpenter, helm), opentofu, ansible, vault, sops.
-work stuff is private, side projects below. [dappy.lgbt](https://dappy.lgbt)
+**when things break at 3am it's usually my problem.**
+
+devsecops engineer: kubernetes on aws and talos, opentofu, argocd, vault, nix-built node fleets.
+the day job stuff isn't public, so this is the after-hours stuff. more at [dappy.lgbt](https://dappy.lgbt)
+
+**maintaining**
+
+- [whisky](https://github.com/frankea/Whisky) (swift): the active fork of the archived wine wrapper for macos. core maintainer: gptk/d3dmetal backend, metal 4, ci-built wine runtime
+- [omniwm](https://github.com/OmniNull/OmniWM) (swift): tiling window manager for apple silicon macs, niri-style scrolling and dwindle bsp. maintainer: ci, performance, security
+- [winecx-gptk](https://github.com/dappermint/winecx-gptk) (c): crossover's wine changes rebased onto upstream wine, so gptk/d3dmetal runs outside crossover
+
+**built**
 
 - [pixeldish](https://github.com/dappermint/pixeldish) (swift): dithered procedural wallpapers for macos, in your menu bar
-- [winecx-gptk](https://github.com/dappermint/winecx-gptk) (c): crossover's wine patches rebased onto upstream wine 11.15 so gptk/d3dmetal runs on it
-- [glass](https://github.com/dappermint/glass) (go): attach a live console to a running go service over a unix socket
-- [omniwm](https://github.com/OmniNull/OmniWM) (swift): tiling window manager for apple silicon macs, niri-style scrolling and dwindle bsp. contributor
-- [whisky](https://github.com/frankea/Whisky) (swift): community fork of the archived whisky wine wrapper for macos. contributor
+- [glass](https://github.com/dappermint/glass) (go): attach a live console to a running go service. three lines in main
+- [occam](https://github.com/dappermint/occam) (go): razer's razor. drives a blackshark v3 pro over its vendor hid protocol, no synapse
+- [ratatouille](https://github.com/dappermint/ratatouille) (go): asks macos what "system data" actually is, then gets rid of it
+- [maccordion](https://github.com/dappermint/maccordion) (rust): play your macbook like an accordion. the lid angle sensor is the bellows
+- [shyfoss](https://github.com/dappermint/shyfoss) (swift): blurs your mac when you look away, using airpods head tracking
 
-go · swift · c · nix · python &nbsp;·&nbsp; macos on nix-darwin, fish &nbsp;·&nbsp; `brew tap dappermint/tap`
+go · swift · rust · c · nix &nbsp;·&nbsp; macos on nix-darwin, fish &nbsp;·&nbsp; `brew tap dappermint/tap`
 
 <div align="center">
 
